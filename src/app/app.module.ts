@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import { OrderComponent } from './order/order.component';
 import { TaskComponent } from './task/task.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TaskComponent } from './task/task.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
