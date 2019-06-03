@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private fleetmanagerService: FleetmanagerService) { }
 
   ngOnInit() {
-
+    console.log("HOME");
     this.getData();
 
   }
@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   getData(){
     this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
       this.itemList = data;
+      console.log("itemList");
+      console.log(this.itemList);
     });
 
   }
