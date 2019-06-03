@@ -1,12 +1,14 @@
 <mat-toolbar> <span> Fleet Manager </span>
   <span class ="spacer"></span>
   <div class="container">
-    <button mat-button> Home </button>
-    <button mat-button> Vehicles </button>
-    <button mat-button> Orders </button>
-    <button mat-button> Tasks </button>
+    <button mat-button [routerLink]="['/']"> Home </button>
+    <button mat-button [routerLink]="['/Vehicles']"> Vehicles </button>
+    <button mat-button [routerLink]="['/Orders']"> Orders </button>
+    <button mat-button [routerLink]="['/Tasks']"> Tasks </button>
+
   </div>
 </mat-toolbar>
 
-
-<router-outlet></router-outlet>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
