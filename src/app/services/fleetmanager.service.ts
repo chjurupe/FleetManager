@@ -18,7 +18,7 @@ export class FleetmanagerService {
   getData(url){
     return this.http.get(`${apiUrl}/${url}`, { params }).pipe(
       tap(value => {
-      console.log(value);
+      //console.log(value);
       })
 
     )

@@ -12,16 +12,19 @@ export class HomeComponent implements OnInit {
   constructor(private fleetmanagerService: FleetmanagerService) { }
 
   ngOnInit() {
-    console.log("HOME");
+    //console.log("HOME");
     this.getData();
 
   }
 
   getData(){
+    //`top-headlines?country=${countryVariable.tolowerCase()}`
     this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
       this.itemList = data;
-      console.log("itemList");
-      console.log(this.itemList);
+      //console.log("itemList");
+      //console.log(this.itemList);
+
+    
     });
 
   }

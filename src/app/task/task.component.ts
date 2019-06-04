@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
+  categories =['Toyota', 'Mazda', 'Citroen'];
+
   constructor() { }
 
   ngOnInit() {
