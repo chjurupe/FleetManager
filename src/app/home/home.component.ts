@@ -9,24 +9,26 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class HomeComponent implements OnInit {
   itemList: any;
+  pageSize: 8;
+  page: 1;
+  length;
 
   constructor(private fleetmanagerService: FleetmanagerService,
               private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    //console.log("HOME");
     this.getData();
-
   }
 
   getData(){
     //`top-headlines?country=${countryVariable.tolowerCase()}`
-    this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
+    /*this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
       this.itemList = data;
-      //console.log("itemList");
-      //console.log(this.itemList);
-
-    
+    });*/
+    this.fleetmanagerService.getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${this.page}`)
+    .subscribe(data =>{
+      this.itemList = data;
+      this.length = data['totalResults'];
     });
 
   }
@@ -43,6 +45,15 @@ export class HomeComponent implements OnInit {
     localStorage.setItem('items', JSON.stringify(items));
 
     this.snackBar.open('Item Added', 'OK', {duration: 3000});
+
+  }
+
+  onPageChange($event){
+    this.fleetmanagerService.getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${$event.pageIndex + 1}`)
+    .subscribe(data =>{
+      this.itemList = data;
+      this.length = data['totalResults'];
+    });
 
   }
 
