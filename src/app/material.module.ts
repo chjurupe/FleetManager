@@ -5,13 +5,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
   declarations: [],
   imports: [CommonModule,MatButtonModule, MatToolbarModule, MatCardModule,
-    MatChipsModule, MatSnackBarModule],
+    MatChipsModule, MatSnackBarModule, MatProgressSpinnerModule],
   exports: [MatButtonModule, MatToolbarModule, MatCardModule, 
-    MatChipsModule, MatSnackBarModule]
+    MatChipsModule, MatSnackBarModule, MatProgressSpinnerModule]
 })
 export class MaterialModule { }
