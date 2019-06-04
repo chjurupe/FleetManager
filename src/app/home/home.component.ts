@@ -29,4 +29,17 @@ export class HomeComponent implements OnInit {
 
   }
 
+  onAdd(item){
+    let items = [];
+    const val = localStorage.getItem('items');
+    if(val !== null){
+      items = JSON.parse(val);
+    }
+
+    items.push(item);
+
+    localStorage.setItem('items', JSON.stringify(items));
+
+  }
+
 }

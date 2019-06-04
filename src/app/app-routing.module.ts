@@ -7,7 +7,10 @@ import { TaskComponent } from './task/task.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'Vehicles', component: VehicleComponent },
+  { path: 'Vehicles', 
+    //component: VehicleComponent 
+    loadChildren: './vehicle/vehicle.module#VehicleModule'
+  },
   { path: 'Orders', component: OrderComponent },
   { path: 'Tasks', component: TaskComponent }
 ];
