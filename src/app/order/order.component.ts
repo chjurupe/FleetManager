@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-order',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class OrderComponent implements OnInit {
   articles;
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getItemsAdded();
@@ -27,6 +28,7 @@ export class OrderComponent implements OnInit {
 
     this.articles.splice(index, 1);
     localStorage.setItem('items', JSON.stringify(this.articles));
+    this.snackBar.open('Item Deleted', 'OK', {duration: 3000});
 
   }
 

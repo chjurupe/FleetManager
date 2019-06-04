@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FleetmanagerService } from '../services/fleetmanager.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { FleetmanagerService } from '../services/fleetmanager.service';
 export class HomeComponent implements OnInit {
   itemList: any;
 
-  constructor(private fleetmanagerService: FleetmanagerService) { }
+  constructor(private fleetmanagerService: FleetmanagerService,
+              private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     //console.log("HOME");
@@ -39,6 +41,8 @@ export class HomeComponent implements OnInit {
     items.push(item);
 
     localStorage.setItem('items', JSON.stringify(items));
+
+    this.snackBar.open('Item Added', 'OK', {duration: 3000});
 
   }
 
