@@ -379,7 +379,8 @@ const VEHICLE_DATA: VehicleElement[] =
 })
 export class VehicleComponent implements OnInit, OnDestroy {
 
-  dataSource = VEHICLE_DATA;
+  //dataSource = VEHICLE_DATA;
+  dataSource;
   columnsToDisplay = ['name', 'status', 'groupId', 'meterValue', 'organization'];
   expandedElement: PeriodicElement | null;
 
@@ -398,7 +399,7 @@ export class VehicleComponent implements OnInit, OnDestroy {
     //  this.itemList = data;
     //});
     this.itemSubscription = this.fleetmanagerService.getData('Vehicles').subscribe(data =>{
-      //this.dataSource = data;
+      this.dataSource = data;
     });
 
   }
