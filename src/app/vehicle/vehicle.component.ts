@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FleetmanagerService } from '../services/fleetmanager.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
+/*
 export class TableExpandableRowsExample {
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
@@ -97,7 +98,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
         two-thirds the density of air.`
   },
 ];
-
+*/
 
 export interface VehicleElement {
   id: number;
@@ -382,7 +383,7 @@ export class VehicleComponent implements OnInit, OnDestroy {
   //dataSource = VEHICLE_DATA;
   dataSource;
   columnsToDisplay = ['name', 'status', 'groupId', 'meterValue', 'organization'];
-  expandedElement: PeriodicElement | null;
+  expandedElement: VehicleElement | null;
 
   private itemSubscription;
 
@@ -394,10 +395,7 @@ export class VehicleComponent implements OnInit, OnDestroy {
   }
 
   getData(){
-    //console.log('Vehicle Get Data');
-    //this.itemSubscription = this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
-    //  this.itemList = data;
-    //});
+    this.dataSource = VEHICLE_DATA;
     this.itemSubscription = this.fleetmanagerService.getData('Vehicles').subscribe(data =>{
       this.dataSource = data;
     });

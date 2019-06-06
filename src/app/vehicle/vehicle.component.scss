@@ -45,3 +45,12 @@ table {
   .example-element-description-attribution {
     opacity: 0.5;
   }
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
