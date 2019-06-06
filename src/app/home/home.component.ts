@@ -25,12 +25,14 @@ export class HomeComponent implements OnInit {
     /*this.fleetmanagerService.getData('top-headlines?country=us').subscribe(data =>{
       this.itemList = data;
     });*/
+
+    /*
     this.fleetmanagerService.getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${this.page}`)
     .subscribe(data =>{
       this.itemList = data;
       this.length = data['totalResults'];
     });
-
+    */
   }
 
   onAdd(item){
@@ -49,12 +51,13 @@ export class HomeComponent implements OnInit {
   }
 
   onPageChange($event){
+    /*
     this.fleetmanagerService.getData(`top-headlines?country=us&pageSize=${this.pageSize}&page=${$event.pageIndex + 1}`)
     .subscribe(data =>{
       this.itemList = data;
       this.length = data['totalResults'];
     });
-
+    */
   }
 
 }

@@ -16,11 +16,20 @@ export class FleetmanagerService {
   constructor(private http: HttpClient) { }
 
   getData(url){
+
+    return this.http.get(`${apiUrl}/${url}`, { }).pipe(
+      tap(value => {
+        console.log(value);
+      })
+
+    );
+    /*
     return this.http.get(`${apiUrl}/${url}`, { params }).pipe(
       tap(value => {
       //console.log(value);
       })
 
     )
+    */
   }
 }

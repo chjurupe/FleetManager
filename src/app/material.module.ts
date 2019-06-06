@@ -7,15 +7,16 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
   declarations: [],
   imports: [CommonModule,MatButtonModule, MatToolbarModule, MatCardModule,
     MatChipsModule, MatSnackBarModule, MatProgressSpinnerModule,
-    MatPaginatorModule],
+    MatPaginatorModule, MatTableModule],
   exports: [MatButtonModule, MatToolbarModule, MatCardModule, 
     MatChipsModule, MatSnackBarModule, MatProgressSpinnerModule,
-    MatPaginatorModule]
+    MatPaginatorModule, MatTableModule]
 })
 export class MaterialModule { }
