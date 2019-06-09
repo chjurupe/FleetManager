@@ -4,11 +4,9 @@
 
 export const environment = {
   production: false,
-  //apiKey: '22f32c20923749fca94bed357b52b721',
-  //apiUrl: 'https://newsapi.org/v2'
   apiKey: '',
-  //apiUrl: 'http://appredson.azurewebsites.net/api'
-  apiUrl: '/api'
+  //apiUrl: '/api'
+  apiUrl: 'http://appredson.azurewebsites.net/api'
 };
 
 /*
