@@ -17,7 +17,10 @@
 
         <ng-container matColumnDef="status">
             <th mat-header-cell *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let element"> {{element.vehicleStatusId}} </td>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon class="icon-status-active" *ngIf="element.vehicleStatusId==1" >brightness_1</mat-icon>
+                <mat-icon class="icon-status-inactive" *ngIf="element.vehicleStatusId!=1" >brightness_1</mat-icon>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="groupId">
@@ -55,7 +58,10 @@
                   <mat-divider></mat-divider>                      
                   <mat-list-item> <div class="col-sm-4"> Type: </div>  <div class="col-sm-8"> {{element.type}} </div></mat-list-item>
                   <mat-divider></mat-divider>
-                  <mat-list-item> <div class="col-sm-4"> Status: </div>  <div class="col-sm-8"> {{element.status}} </div></mat-list-item>
+                  <mat-list-item> <div class="col-sm-4"> Status: </div>  
+                    <div class="col-sm-8" *ngIf="element.vehicleStatusId==1"> <mat-icon class="icon-status-active">brightness_1</mat-icon> Active </div>
+                    <div class="col-sm-8" *ngIf="element.vehicleStatusId!=1"> <mat-icon class="icon-status-inactive">brightness_1</mat-icon> Inactive </div>
+                  </mat-list-item>
                   <mat-divider></mat-divider>
                   <mat-list-item> <div class="col-sm-4"> VIN/SN: </div>  <div class="col-sm-8"> {{element.vin}} </div></mat-list-item>
                   <mat-divider></mat-divider>                                    

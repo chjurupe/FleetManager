@@ -54,3 +54,13 @@ table {
   .example-container > * {
     width: 100%;
   }
+
+  mat-icon.icon-status-active{
+    font-size: 80%;
+    color:green;
+  }
+
+  mat-icon.icon-status-inactive{
+    font-size: 80%;
+    color:red;
+  }
